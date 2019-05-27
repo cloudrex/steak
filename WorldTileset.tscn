@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://assets/world/Stone.png" type="Texture" id=1]
+[ext_resource path="res://assets/world/MiniralCopper.png" type="Texture" id=2]
+[ext_resource path="res://assets/world/Grass.png" type="Texture" id=3]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Stone" type="Sprite" parent="."]
+position = Vector2( 8, 8 )
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="MiniralCopper" type="Sprite" parent="."]
+position = Vector2( 8, 24 )
+texture = ExtResource( 2 )
+
+[node name="Grass" type="Sprite" parent="MiniralCopper"]
+position = Vector2( 16, -16 )
+texture = ExtResource( 3 )
