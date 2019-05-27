@@ -3,9 +3,14 @@ extends KinematicBody2D
 enum Orientation {UP, LEFT, DOWN, RIGHT}
 
 # Member variables
-const MOTION_SPEED = 50 # Pixels/second
+const MOTION_SPEED = 30 # Pixels/second
+const ROTATION_SPEED = 2
 
 var velocity = Vector2(0, 0)
+
+func _process(delta):
+	if (Input.is_key_pressed(KEY_E)):
+		self.rotation = self.rotation + ROTATION_SPEED * delta
 
 func _physics_process(delta):
 	var motion = Vector2()
@@ -55,7 +60,7 @@ func move():
 	move_and_slide(motion)
 
 func _on_MovementTimer_timeout():
-	move()
+	#move()
 	#orientTowardsMouse()
 	setTarget(get_global_mouse_position())
 	#setOrientation(Orientation.UP)
