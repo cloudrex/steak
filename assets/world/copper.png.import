@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/MiniralCopper.png-31bab1da836cb7414d54ac21e1c4ffd4.stex"
+path="res://.import/copper.png-9c90b76b21a3ef305176136fd8d63d22.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/world/MiniralCopper.png"
-dest_files=[ "res://.import/MiniralCopper.png-31bab1da836cb7414d54ac21e1c4ffd4.stex" ]
+source_file="res://assets/world/copper.png"
+dest_files=[ "res://.import/copper.png-9c90b76b21a3ef305176136fd8d63d22.stex" ]
 
 [params]
 
