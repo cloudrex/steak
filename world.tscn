@@ -6,8 +6,8 @@
 [ext_resource path="res://scripts/player.gd" type="Script" id=4]
 [ext_resource path="res://assets/robots/red.png" type="Texture" id=5]
 
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 8, 8 )
+[sub_resource type="CircleShape2D" id=1]
+radius = 8.0
 
 [node name="world" type="Node2D"]
 script = ExtResource( 1 )
@@ -34,9 +34,9 @@ script = ExtResource( 4 )
 [node name="sprite" type="Sprite" parent="player"]
 texture = ExtResource( 5 )
 
-[node name="collisionShape" type="CollisionShape2D" parent="player"]
-shape = SubResource( 1 )
-
 [node name="camera" type="Camera2D" parent="player"]
 current = true
 zoom = Vector2( 0.6, 0.6 )
+
+[node name="collisionShape" type="CollisionShape2D" parent="player"]
+shape = SubResource( 1 )

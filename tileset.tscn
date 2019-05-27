@@ -9,10 +9,10 @@
 [ext_resource path="res://assets/world/path/pathTwo.png" type="Texture" id=7]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 7.9, 7.9 )
+extents = Vector2( 8, 8 )
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 7.9, 7.9 )
+extents = Vector2( 8, 8 )
 
 [node name="tileset" type="Node2D"]
 __meta__ = {

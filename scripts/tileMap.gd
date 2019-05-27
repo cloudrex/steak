@@ -1,10 +1,28 @@
 extends TileMap
 
-enum Tile {STONE = 0, COPPER = 1, GRASS = 2}
+enum Tile {
+	STONE,
+	COPPER,
+	GRASS,
+	PATH_END,
+	PATH_FULL,
+	PATH_ONE,
+	PATH_TWO
+}
+
+var tiles = [
+	Tile.GRASS,
+	Tile.STONE,
+	Tile.COPPER,
+	Tile.PATH_END,
+	Tile.PATH_FULL,
+	Tile.PATH_ONE,
+	Tile.PATH_TWO,
+]
 
 var rarity = {Tile.GRASS: 15, Tile.STONE: 5, Tile.COPPER: 80}
-var tiles = [Tile.GRASS, Tile.STONE, Tile.COPPER]
-var tileShortcuts = [KEY_1, KEY_2, KEY_3]
+
+var tileShortcuts = [KEY_1, KEY_2, KEY_3, KEY_4, KEY_5, KEY_6, KEY_7]
 var tileShortcutCount = tileShortcuts.size()
 var activeTile = tiles[0]
 

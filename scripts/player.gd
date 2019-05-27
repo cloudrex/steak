@@ -1,4 +1,4 @@
-extends "res://scripts/entity.gd"
+extends "res://scripts/unit.gd"
 
 enum Orientation {UP, LEFT, DOWN, RIGHT}
 
