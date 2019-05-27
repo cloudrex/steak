@@ -2,9 +2,9 @@ extends "res://scripts/entity.gd"
 
 enum Orientation {UP, LEFT, DOWN, RIGHT}
 
-# Member variables
-const MOTION_SPEED = 30 # Pixels/second
-const PATH_BOOST = 20
+# Constants.
+const MOTION_SPEED = 30
+const PATH_SPEED_BOOST = 20
 const ROTATION_SPEED = 2
 
 var velocity = Vector2(0, 0)
@@ -25,8 +25,10 @@ func _physics_process(delta):
 	if Input.is_action_pressed("move_right"):
 		motion.x += 1
 	
+	# Normalize motion.
 	motion = motion.normalized() * MOTION_SPEED
-
+	
+	# Apply motion.
 	move_and_slide(motion)
 
 func setTarget(target):
