@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/red.png-5db3a0d57a00e8e5876fec0dc77ae896.stex"
+path="res://.import/path-corner.png-06c6f994e47855b8513e27735427d7ec.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/robots/red.png"
-dest_files=[ "res://.import/red.png-5db3a0d57a00e8e5876fec0dc77ae896.stex" ]
+source_file="res://assets/world/path/path-corner.png"
+dest_files=[ "res://.import/path-corner.png-06c6f994e47855b8513e27735427d7ec.stex" ]
 
 [params]
 
