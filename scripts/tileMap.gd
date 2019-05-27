@@ -56,6 +56,9 @@ func getMouseLocation():
 # Get the tile ID of the cell at the mouse location.
 func getMouseCell():
 	return self.get_cellv(self.getMouseLocation())
+	
+func getCellAt(position):
+	return self.get_cellv(self.world_to_map(position))
 
 func _process(delta):
 	# Retrieve the mouse cell location.

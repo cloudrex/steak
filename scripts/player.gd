@@ -2,14 +2,21 @@ extends "res://scripts/entity.gd"
 
 enum Orientation {UP, LEFT, DOWN, RIGHT}
 
+# Retrieve nodes.
+onready var tileMap = get_node("../tileMap")
+
 # Constants.
 const MOTION_SPEED = 30
-const PATH_SPEED_BOOST = 20
+const PATH_SPEED_BOOST = 70
 const ROTATION_SPEED = 2
 
 var velocity = Vector2(0, 0)
 
-func _process(delta):
+func _ready():
+	print(tileMap)
+
+func _process(delta):	
+	# Rotate player.
 	if (Input.is_key_pressed(KEY_E)):
 		self.rotation = self.rotation + ROTATION_SPEED * delta
 
@@ -24,9 +31,16 @@ func _physics_process(delta):
 		motion.x -= 1
 	if Input.is_action_pressed("move_right"):
 		motion.x += 1
+		
+	# Create the speed buffer.
+	var speed = MOTION_SPEED
+	
+	# Apply speed boost if entity is on a path.
+	if (tileMap.getCellAt(self.position) == tileMap.Tile.GRASS):
+		speed += PATH_SPEED_BOOST
 	
 	# Normalize motion.
-	motion = motion.normalized() * MOTION_SPEED
+	motion = motion.normalized() * speed
 	
 	# Apply motion.
 	move_and_slide(motion)
