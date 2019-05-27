@@ -4,6 +4,9 @@ enum Tile {STONE = 0, COPPER = 1, GRASS = 2}
 
 var rarity = {Tile.GRASS: 15, Tile.STONE: 5, Tile.COPPER: 80}
 var tiles = [Tile.GRASS, Tile.STONE, Tile.COPPER]
+var tileShortcuts = [KEY_1, KEY_2, KEY_3]
+var tileShortcutCount = tileShortcuts.size()
+var activeTile = tiles[0]
 
 func _ready():
 	generate()
@@ -45,12 +48,28 @@ func generate():
 		
 	print("Terrain generation completed")
 
+func getMouseLocation():
+	var mousePosition = get_global_mouse_position()
+	
+	return self.world_to_map(mousePosition)
+	
+func getMouseCell():
+	return self.get_cellv(getMouseLocation())
+
 func _process(delta):
-	if (Input.is_mouse_button_pressed(BUTTON_LEFT)):
-		var mousePosition = get_global_mouse_position()
-		var location = self.world_to_map(mousePosition)
-		var cell = self.get_cell(location.x, location.y)
+	# Retrieve the mouse cell location.
+	var location = getMouseLocation()
+	
+	# Set tile.
+	for i in range(tileShortcutCount):
+		var key = tileShortcuts[i]
 		
-		if (cell == -1):
-			print("Set cell at: (" + str(location.x) + ", " + str(location.y) + ")")
-			self.set_cell(location.x, location.y, Tile.GRASS)
+		if (Input.is_key_pressed(key)):
+			activeTile = tiles[i]
+	
+	# Add tile.
+	if (Input.is_mouse_button_pressed(BUTTON_LEFT)):		
+		self.set_cellv(location, activeTile)
+	# Remove tile.
+	elif (Input.is_mouse_button_pressed(BUTTON_RIGHT)):
+		self.set_cellv(location, -1)

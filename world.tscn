@@ -33,4 +33,11 @@ texture = ExtResource( 5 )
 
 [node name="collisionShape2D" type="CollisionShape2D" parent="bot"]
 shape = SubResource( 1 )
+
+[node name="materialIndicator" type="RichTextLabel" parent="."]
+margin_left = -244.782
+margin_top = 140.493
+margin_right = -122.782
+margin_bottom = 155.493
+text = "Active material: "
 [connection signal="timeout" from="movementTimer" to="player" method="_on_MovementTimer_timeout"]
