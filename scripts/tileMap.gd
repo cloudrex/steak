@@ -54,12 +54,13 @@ func getNextTile(noise):
 func generate(x, y):
 	x = x / 16
 	y = y / 16
+	
 	# Column.
 	for i in range(-RADIUS, RADIUS + 1):
 		for j in range(-RADIUS, RADIUS + 1):
-			var xnoise = x + i / 2
-			var ynoise = y + j / 2
-			self.set_cellv(Vector2(x + i, y + j), getNextTile(noise.get_noise_2d(xnoise, ynoise)))
+			var noiseVector = Vector2(x + i / 2, y + j / 2)
+			
+			self.set_cellv(Vector2(x + i, y + j), getNextTile(noise.get_noise_2d(noiseVector.x, noiseVector.y)))
 
 	print("Terrain generation completed")
 
