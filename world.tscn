@@ -4,7 +4,8 @@
 [ext_resource path="res://tileMap.gd" type="Script" id=2]
 [ext_resource path="res://player.tscn" type="PackedScene" id=3]
 [ext_resource path="res://bot.gd" type="Script" id=4]
-[ext_resource path="res://assets/robots/Red.png" type="Texture" id=5]
+[ext_resource path="res://assets/robots/red.png" type="Texture" id=5]
+
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 8, 8 )

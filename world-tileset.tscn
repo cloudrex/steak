@@ -4,10 +4,16 @@
 [ext_resource path="res://assets/world/copper.png" type="Texture" id=2]
 [ext_resource path="res://assets/world/grass.png" type="Texture" id=3]
 [ext_resource path="res://assets/world/path/path-corner.png" type="Texture" id=4]
-[ext_resource path="res://assets/world/path/path-end.png" type="Texture" id=5]
-[ext_resource path="res://assets/world/path/path-full.png" type="Texture" id=6]
-[ext_resource path="res://assets/world/path/path-one.png" type="Texture" id=7]
-[ext_resource path="res://assets/world/path/path-two.png" type="Texture" id=8]
+[ext_resource path="res://assets/world/path/pathEnd.png" type="Texture" id=5]
+[ext_resource path="res://assets/world/path/pathFull.png" type="Texture" id=6]
+[ext_resource path="res://assets/world/path/pathOne.png" type="Texture" id=7]
+[ext_resource path="res://assets/world/path/pathTwo.png" type="Texture" id=8]
+
+
+
+
+
+
 
 [node name="Node2D" type="Node2D"]
 

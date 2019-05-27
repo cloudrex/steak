@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/path-corner.png-06c6f994e47855b8513e27735427d7ec.stex"
+path="res://.import/pathOne.png-4be2f585ee933ddd7da650d63961430f.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/world/path/path-corner.png"
-dest_files=[ "res://.import/path-corner.png-06c6f994e47855b8513e27735427d7ec.stex" ]
+source_file="res://assets/world/path/pathOne.png"
+dest_files=[ "res://.import/pathOne.png-4be2f585ee933ddd7da650d63961430f.stex" ]
 
 [params]
 
