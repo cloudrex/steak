@@ -19,6 +19,11 @@ func _process(delta):
 	# Rotate player.
 	if (Input.is_key_pressed(KEY_E)):
 		self.rotation = self.rotation + ROTATION_SPEED * delta
+		
+	if (Input.is_key_pressed(KEY_R)):
+		tileMap.generate(self.position.x, self.position.y)
+		print(self.position.x)
+		print(self.position.y)
 
 func _physics_process(delta):
 	var motion = Vector2()
