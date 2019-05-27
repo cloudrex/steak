@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://assets/world/stone.png" type="Texture" id=1]
 [ext_resource path="res://assets/world/copper.png" type="Texture" id=2]
@@ -11,9 +11,17 @@
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 8, 8 )
 
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 8, 8 )
+
 [node name="Root" type="Node2D"]
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
 
 [node name="stone" type="Sprite" parent="."]
+editor/display_folded = true
 position = Vector2( 8, 8 )
 texture = ExtResource( 1 )
 
@@ -23,8 +31,14 @@ texture = ExtResource( 1 )
 shape = SubResource( 1 )
 
 [node name="copper" type="Sprite" parent="."]
+editor/display_folded = true
 position = Vector2( 8, 24 )
 texture = ExtResource( 2 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="copper"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="copper/StaticBody2D"]
+shape = SubResource( 2 )
 
 [node name="grass" type="Sprite" parent="."]
 position = Vector2( 24, 8 )
@@ -34,11 +48,11 @@ texture = ExtResource( 3 )
 position = Vector2( 72, 40 )
 
 [node name="pathEnd" type="Sprite" parent="."]
-position = Vector2( 56, 40 )
+position = Vector2( 24, 24 )
 texture = ExtResource( 4 )
 
 [node name="pathFull" type="Sprite" parent="."]
-position = Vector2( 40, 40 )
+position = Vector2( 40, 8 )
 texture = ExtResource( 5 )
 
 [node name="pathOne" type="Sprite" parent="."]
