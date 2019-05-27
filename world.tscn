@@ -1,28 +1,30 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
-[ext_resource path="res://tileset.tres" type="TileSet" id=1]
-[ext_resource path="res://tileMap.gd" type="Script" id=2]
-[ext_resource path="res://player.tscn" type="PackedScene" id=3]
-[ext_resource path="res://bot.gd" type="Script" id=4]
-[ext_resource path="res://assets/robots/red.png" type="Texture" id=5]
+[ext_resource path="res://scripts/world.gd" type="Script" id=1]
+[ext_resource path="res://tileset.tres" type="TileSet" id=2]
+[ext_resource path="res://scripts/tileMap.gd" type="Script" id=3]
+[ext_resource path="res://player.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scripts/bot.gd" type="Script" id=5]
+[ext_resource path="res://assets/robots/red.png" type="Texture" id=6]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 8, 8 )
 
 [node name="world" type="Node2D"]
+script = ExtResource( 1 )
 __meta__ = {
 "_edit_group_": true,
 "_edit_lock_": true
 }
 
 [node name="tileMap" type="TileMap" parent="."]
-tile_set = ExtResource( 1 )
+tile_set = ExtResource( 2 )
 cell_size = Vector2( 16, 16 )
 collision_use_kinematic = true
 format = 1
-script = ExtResource( 2 )
+script = ExtResource( 3 )
 
-[node name="player" parent="." instance=ExtResource( 3 )]
+[node name="player" parent="." instance=ExtResource( 4 )]
 position = Vector2( 8, 8 )
 
 [node name="movementTimer" type="Timer" parent="."]
@@ -31,10 +33,10 @@ autostart = true
 
 [node name="bot" type="KinematicBody2D" parent="."]
 position = Vector2( -8, -8 )
-script = ExtResource( 4 )
+script = ExtResource( 5 )
 
 [node name="sprite" type="Sprite" parent="bot"]
-texture = ExtResource( 5 )
+texture = ExtResource( 6 )
 
 [node name="collisionShape" type="CollisionShape2D" parent="bot"]
 shape = SubResource( 1 )

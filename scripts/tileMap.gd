@@ -12,7 +12,6 @@ func _ready():
 	# Inform the developer.
 	print("TileMap ready")
 	
-	
 func getNextTile():
 	# Generate a random number from 1-100.
 	var pick = randi() % 100 + 1
@@ -47,18 +46,20 @@ func generate():
 		buffer.y = start.y
 		
 	print("Terrain generation completed")
-
+	
+# Returns the mouse cell location.
 func getMouseLocation():
 	var mousePosition = get_global_mouse_position()
 	
 	return self.world_to_map(mousePosition)
-	
+
+# Get the tile ID of the cell at the mouse location.
 func getMouseCell():
-	return self.get_cellv(getMouseLocation())
+	return self.get_cellv(self.getMouseLocation())
 
 func _process(delta):
 	# Retrieve the mouse cell location.
-	var location = getMouseLocation()
+	var location = self.getMouseLocation()
 	
 	# Regenerate terrain.
 	if (Input.is_key_pressed(KEY_R)):

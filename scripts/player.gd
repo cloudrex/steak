@@ -1,9 +1,10 @@
-extends KinematicBody2D
+extends "res://scripts/entity.gd"
 
 enum Orientation {UP, LEFT, DOWN, RIGHT}
 
 # Member variables
 const MOTION_SPEED = 30 # Pixels/second
+const PATH_BOOST = 20
 const ROTATION_SPEED = 2
 
 var velocity = Vector2(0, 0)
