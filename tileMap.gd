@@ -63,6 +63,10 @@ func _process(delta):
 	# Retrieve the mouse cell location.
 	var location = getMouseLocation()
 	
+	# Regenerate terrain.
+	if (Input.is_key_pressed(KEY_R)):
+		generate()
+	
 	# Set tile.
 	for i in range(tileShortcutCount):
 		var key = tileShortcuts[i]
