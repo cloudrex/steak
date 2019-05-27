@@ -10,6 +10,10 @@
 extents = Vector2( 8, 8 )
 
 [node name="world" type="Node2D"]
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
 
 [node name="tileMap" type="TileMap" parent="."]
 tile_set = ExtResource( 1 )
@@ -26,6 +30,7 @@ wait_time = 0.1
 autostart = true
 
 [node name="bot" type="KinematicBody2D" parent="."]
+editor/display_folded = true
 position = Vector2( -8, -8 )
 script = ExtResource( 4 )
 
