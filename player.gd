@@ -26,15 +26,21 @@ func _physics_process(delta):
 func setTarget(target):
 	if (velocity.x < target.x):
 		velocity.x = 1
+	elif (velocity.x > target.x):
+		velocity.x = -1
+	else:
+		velocity.x = 0
 	
 	if (velocity.y < target.y):
 		velocity.y = 1
-		
-	if (velocity.x > target.x):
-		velocity.x = -1
-		
-	if (velocity.y > target.y):
+	elif (velocity.y > target.y):
 		velocity.y = -1
+	else:
+		velocity.y = 0
+
+#func setOrientation(orientation):
+	#if (orientation == Orientation.UP):
+		#self.look_at(
 
 func orientTowardsMouse():
 	self.look_at(get_global_mouse_position())
@@ -50,6 +56,8 @@ func move():
 
 func _on_MovementTimer_timeout():
 	move()
-	orientTowardsMouse()
+	#orientTowardsMouse()
 	setTarget(get_global_mouse_position())
+	#setOrientation(Orientation.UP)
+	
 	pass # Replace with function body.
