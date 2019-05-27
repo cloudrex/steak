@@ -9,7 +9,10 @@ var tileShortcutCount = tileShortcuts.size()
 var activeTile = tiles[0]
 
 func _ready():
+	# Invoke terrain generation function.
 	generate()
+	
+	# Inform the developer.
 	print("TileMap ready")
 	
 	
