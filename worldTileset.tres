@@ -9,8 +9,6 @@
 [ext_resource path="res://assets/world/path/pathFull.png" type="Texture" id=7]
 [ext_resource path="res://assets/world/path/pathOne.png" type="Texture" id=8]
 
-
-
 [resource]
 0/name = "Stone"
 0/texture = ExtResource( 1 )
@@ -40,7 +38,13 @@
 2/tile_mode = 0
 2/occluder_offset = Vector2( 8, 8 )
 2/navigation_offset = Vector2( 8, 8 )
-2/shapes = [  ]
+2/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": null,
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
 2/z_index = 0
 3/name = "stone"
 3/texture = ExtResource( 1 )
@@ -50,7 +54,13 @@
 3/tile_mode = 0
 3/occluder_offset = Vector2( 8, 8 )
 3/navigation_offset = Vector2( 8, 8 )
-3/shapes = [  ]
+3/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": null,
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
 3/z_index = 0
 4/name = "copper"
 4/texture = ExtResource( 2 )
