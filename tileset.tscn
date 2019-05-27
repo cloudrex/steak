@@ -14,7 +14,7 @@ extents = Vector2( 8, 8 )
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 8, 8 )
 
-[node name="Root" type="Node2D"]
+[node name="root" type="Node2D"]
 __meta__ = {
 "_edit_group_": true,
 "_edit_lock_": true

@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://worldTileset.tres" type="TileSet" id=1]
+[ext_resource path="res://tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://tileMap.gd" type="Script" id=2]
 [ext_resource path="res://player.tscn" type="PackedScene" id=3]
 [ext_resource path="res://bot.gd" type="Script" id=4]
@@ -16,7 +16,6 @@ tile_set = ExtResource( 1 )
 cell_size = Vector2( 16, 16 )
 collision_use_kinematic = true
 format = 1
-tile_data = PoolIntArray( -196609, -2147483647, 0, -131073, -2147483647, 0, -196607, -2147483647, 0, -65537, -2147483647, 0, -131072, -2147483647, 0, -131071, -2147483647, 0, -3, -2147483648, 0, -2, -2147483648, 0, -65536, -2147483647, 0, -65535, -2147483647, 0 )
 script = ExtResource( 2 )
 
 [node name="player" parent="." instance=ExtResource( 3 )]
