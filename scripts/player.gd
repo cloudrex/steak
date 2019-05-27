@@ -7,7 +7,7 @@ onready var tileMap = get_node("../tileMap")
 
 # Constants.
 const MOTION_SPEED = 30
-const PATH_SPEED_BOOST = 70
+const PATH_SPEED_BOOST = 20
 const ROTATION_SPEED = 2
 
 var velocity = Vector2(0, 0)
