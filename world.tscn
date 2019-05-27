@@ -30,13 +30,12 @@ wait_time = 0.1
 autostart = true
 
 [node name="bot" type="KinematicBody2D" parent="."]
-editor/display_folded = true
 position = Vector2( -8, -8 )
 script = ExtResource( 4 )
 
-[node name="Sprite" type="Sprite" parent="bot"]
+[node name="sprite" type="Sprite" parent="bot"]
 texture = ExtResource( 5 )
 
-[node name="collisionShape2D" type="CollisionShape2D" parent="bot"]
+[node name="collisionShape" type="CollisionShape2D" parent="bot"]
 shape = SubResource( 1 )
 [connection signal="timeout" from="movementTimer" to="player" method="_on_MovementTimer_timeout"]
