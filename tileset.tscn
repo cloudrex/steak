@@ -9,10 +9,10 @@
 [ext_resource path="res://assets/world/path/pathTwo.png" type="Texture" id=7]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 8, 8 )
+extents = Vector2( 7.9, 7.9 )
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 8, 8 )
+extents = Vector2( 7.9, 7.9 )
 
 [node name="root" type="Node2D"]
 __meta__ = {
@@ -21,7 +21,6 @@ __meta__ = {
 }
 
 [node name="stone" type="Sprite" parent="."]
-editor/display_folded = true
 position = Vector2( 8, 8 )
 texture = ExtResource( 1 )
 
@@ -31,7 +30,6 @@ texture = ExtResource( 1 )
 shape = SubResource( 1 )
 
 [node name="copper" type="Sprite" parent="."]
-editor/display_folded = true
 position = Vector2( 8, 24 )
 texture = ExtResource( 2 )
 
