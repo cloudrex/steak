@@ -9,22 +9,37 @@ onready var tileMap = get_node("../tileMap")
 const MOTION_SPEED = 30
 const PATH_SPEED_BOOST = 20
 const ROTATION_SPEED = 2
+const ROTATION_DIFFERENCE = 1
 
 var velocity = Vector2(0, 0)
+var targetRotation = null
 
 func _ready():
 	print(tileMap)
-
-func _process(delta):	
+	
+func _process(delta):
+	# Rotate towards target rotation.
+	if (targetRotation != null):
+		if (self.rotation_degrees < targetRotation or self.rotation_degrees > targetRotation):
+			if (abs(targetRotation - self.rotation_degrees)  < ROTATION_DIFFERENCE):
+				self.rotation = deg2rad(targetRotation)
+				targetRotation = null
+			else:
+				self.rotation = self.rotation + ROTATION_SPEED * delta
 	# Rotate player.
-	if (Input.is_key_pressed(KEY_E)):
+	elif Input.is_key_pressed(KEY_E):
 		self.rotation = self.rotation + ROTATION_SPEED * delta
 		
-	if (Input.is_key_pressed(KEY_R)):
-		tileMap.generate(self.position.x, self.position.y)
-		print(self.position.x)
-		print(self.position.y)
-
+func _input(event):
+	if (event is InputEventKey):
+		var key = event.scancode
+		
+		# Regenerate terrain.
+		if key == KEY_R:
+			tileMap.generate(self.position.x, self.position.y)
+			print(self.position.x)
+			print(self.position.y)
+	
 func _physics_process(delta):
 	var motion = Vector2()
 	
@@ -71,6 +86,10 @@ func setTarget(target):
 
 func orientTowardsMouse():
 	self.look_at(get_global_mouse_position())
+	
+func setTargetOrientation(orientation):
+	# TODO
+	pass
 	
 func move():
 	var motion = Vector2()
